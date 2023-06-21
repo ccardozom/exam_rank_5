@@ -1,16 +1,24 @@
 #include <iostream>
-#include "Warlock.hpp"
+#include "prueba.hpp"
 
 int main()
 {
-  Warlock const richard("Richard", "Mistress of Magma");
-  richard.introduce();
+  Warlock richard("Richard", "Mistress of Magma");
+  //richard.introduce();
   std::cout << richard.getName() << " - " << richard.getTitle() << std::endl;
+  Warlock arturo("Arturo", "Magnetum filter");
 
   Warlock* jack = new Warlock("Jack", "the Long");
-  jack->introduce();
+  std::cout << jack->getName() << " - " << jack->getTitle() << std::endl;
+
+  //jack->introduce();
   jack->setTitle("the Mighty");
-  jack->introduce();
+  std::cout << jack->getName() << " - " << jack->getTitle() << std::endl;
+
+  richard = arturo;
+  std::cout << richard.getName() << " - " << richard.getTitle() << std::endl;
+
+  //jack->introduce();
 
   delete jack;
 
