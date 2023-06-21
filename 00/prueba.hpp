@@ -8,13 +8,9 @@ class Warlock{
     private:
         std::string _name;
         std::string _title;
+        Warlock& operator=(Warlock&){return *this;}
+        Warlock(Warlock&);
     public:
-        Warlock& operator=(const Warlock& war){
-            this->_name = war._name;
-            this->_title = war._title;
-            return *this;
-        }
-
         Warlock(const std::string& name, const std::string& title){
             this->_name = name;
             this->_title = title;
@@ -33,7 +29,13 @@ class Warlock{
             this->_title = title;
         }
 
+        void introduce() const{
+            std::cout << this->_name << ": I am " << this->_name << ", " << this->_title << "!\n";
+        }
 
+        ~Warlock(){
+            std::cout << this->_name << ": My job here is done!\n";
+        }
 };
 
 #endif
